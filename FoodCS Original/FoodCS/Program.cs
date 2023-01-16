@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 namespace FoodCS
 {
 
-    class Household
+    class Household //this is the household class
     {
         private static Random rnd = new Random();
         protected double chanceEatOutPerDay;
