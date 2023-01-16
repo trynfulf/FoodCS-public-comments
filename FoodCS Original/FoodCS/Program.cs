@@ -18,8 +18,9 @@ using System.Threading.Tasks;
 namespace FoodCS
 {
 
-    class Household //this is the household class
+    class Household
     {
+        /* The household class is used to store information on individual houses pretty basic very struct like in nature */
         private static Random rnd = new Random();
         protected double chanceEatOutPerDay;
         protected int xCoord, yCoord, ID;
@@ -59,6 +60,8 @@ namespace FoodCS
 
     class Settlement
     {
+        /* The settlement class is used to store information on the settlement as a whole, it is also used to create the households and to store them in a list. 
+        kind of struct like contains useful functions such as generate households */
         private static Random rnd = new Random();
         protected int startNoOfHouseholds, xSize, ySize;
         protected List<Household> households = new List<Household>();
@@ -85,9 +88,10 @@ namespace FoodCS
         {
             return ySize;
         }
-
+        //refs used to remove the need for complex return values and to allow for the use of the same function for both x and y
         public void GetRandomLocation(ref int x, ref int y)
         {
+            //this code allows for overlapping households but it is not a problem for this simulation and sort of simulates the real world
             x = Convert.ToInt32(rnd.NextDouble() * xSize);
             y = Convert.ToInt32(rnd.NextDouble() * ySize);
         }
@@ -99,7 +103,7 @@ namespace FoodCS
                 AddHousehold();
             }
         }
-
+        //adds a household to the list of households
         public void AddHousehold()
         {
             int x = 0, y = 0;
@@ -107,7 +111,7 @@ namespace FoodCS
             Household temp = new Household(x, y);
             households.Add(temp);
         }
-
+        //displays all the households in the settlement
         public void DisplayHouseholds()
         {
             Console.WriteLine("\n**********************************");
@@ -119,7 +123,7 @@ namespace FoodCS
             }
             Console.WriteLine();
         }
-
+        //finds out if a household eats out
         public bool FindOutIfHouseholdEatsOut(int householdNo, ref int x, ref int y)
         {
             double eatOutRNo = rnd.NextDouble();
@@ -135,7 +139,7 @@ namespace FoodCS
             }
         }
     }
-
+    //this class is used to create a settlement with extra households and extra size
     class LargeSettlement : Settlement
     {
         public LargeSettlement(int extraXSize, int extraYSize, int extraHouseholds)
@@ -150,7 +154,8 @@ namespace FoodCS
             }
         }
     }
-
+    /*the outlet class is used to store information on the outlets which 
+    it can alter the daily cost and capacity*/
     class Outlet
     {
         private static Random rnd = new Random();
@@ -166,7 +171,7 @@ namespace FoodCS
             dailyCosts = maxCapacityBase * 0.2 + capacity * 0.5 + 100;
             NewDay();
         }
-
+        
         public int GetCapacity()
         {
             return capacity;
@@ -186,7 +191,9 @@ namespace FoodCS
         {
             dailyCosts += amount;
         }
-
+        /*this function is used to alter the capacity of the outlet
+        it also calcuates the new daily costs 
+        it returns the int that was supplied (dumb)*/
         public int AlterCapacity(int change)
         {
             int oldCapacity = capacity;
@@ -203,22 +210,22 @@ namespace FoodCS
             dailyCosts = maxCapacity * 0.2 + capacity * 0.5 + 100;
             return change;
         }
-
+        //this function is used to increment the number of visits to the outlet
         public void IncrementVisits()
         {
             visitsToday++;
         }
-
+        //this function is used to reset the number of visits to the outlet
         public void NewDay()
         {
             visitsToday = 0;
         }
-
+        //this function is used to calculate the daily profit or loss
         public double CalculateDailyProfitLoss(double avgCostPerMeal, double avgPricePerMeal)
         {
             return (avgPricePerMeal - avgCostPerMeal) * visitsToday - dailyCosts;
         }
-
+        //this function is used to return the details of the outlet
         public string GetDetails()
         {
             string details = "";
@@ -230,12 +237,13 @@ namespace FoodCS
 
     class Company
     {
+        /*this class is used to create a company which can have outlets
+        it sets the base cost for its outlets and has differnt type of outlets*/
         private static Random rnd = new Random();
         protected string name, category;
         protected double balance, reputationScore, avgCostPerMeal, avgPricePerMeal, dailyCosts, familyOutletCost, fastFoodOutletCost, namedChefOutletCost, fuelCostPerUnit, baseCostOfDelivery;
         protected List<Outlet> outlets = new List<Outlet>();
         protected int familyFoodOutletCapacity, fastFoodOutletCapacity, namedChefOutletCapacity;
-
         public Company(string name, string category, double balance, int x, int y, double fuelCostPerUnit, double baseCostOfDelivery)
         {
             familyOutletCost = 1000;
