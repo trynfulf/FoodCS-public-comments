@@ -431,6 +431,12 @@ namespace FoodCS
             outlets.Add(newOutlet);
         }
 
+        /*
+        The function below creates the master list of all the outlets. 
+        
+        
+        */
+        
         public List<int> GetListOfOutlets()
         {
             List<int> temp = new List<int>();
@@ -441,6 +447,22 @@ namespace FoodCS
             return temp;
         }
 
+        /*
+        The function below calculates the distance between two outlets. The parameters are the coords of the outlets. These coords are found from the list generated in
+        the function above. 
+        
+        The calculation is essentialy pythagoras' theorem. This means that it can be boiled down to: 
+        
+        a^2 + b^2 = c^2  where a = difference of the outlets x coord (retrieved using .GetX() [line 180])
+                               b = difference of the outlets y coord (retrieved using .GetY() [line 185])
+                               c = distance between the points (function returns the rooted version using Math.Sqrt() [built in])  
+        
+        The function is used exclusively below to calculate the delivery cost. It does not feature in any capacity anywhere else. 
+        
+        Optimisations: N/A ? (I think this algorithm can't be made any faster) however, it can be made more explicit/clear.             
+        
+        */ 
+        
         private double GetDistanceBetweenTwoOutlets(int outlet1, int outlet2)
         {
             return Math.Sqrt((Math.Pow(outlets[outlet1].GetX() - outlets[outlet2].GetX(), 2)) + (Math.Pow(outlets[outlet1].GetY() - outlets[outlet2].GetY(), 2)));
