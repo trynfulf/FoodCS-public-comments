@@ -11,7 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-
+/*
+Throughout the whole program, there is no negative number validation. 
+*/
 
 
 
@@ -111,7 +113,7 @@ namespace FoodCS
             Household temp = new Household(x, y);
             households.Add(temp);
         }
-        //displays all the households in the settlement
+        //displays all the households in the settlement - "not paged at all(not in any way) "
         public void DisplayHouseholds()
         {
             Console.WriteLine("\n**********************************");
@@ -164,7 +166,8 @@ namespace FoodCS
     The class below generates the outlets. In the simulation, outlets are where the households buy the food. 
     
     Each outlet has its own x,y coords in the settlement.
-    
+    "IDs of outlets are not printed properly. THis is because they are actually zero-indexed and not one-indexed. This makes it unnecessarily difficult
+    for the user to change/modify households. "
     */
     class Outlet
     {
@@ -247,6 +250,8 @@ namespace FoodCS
 
     /*
     The class below is used to create the companies in the simulation. Each instance of company has its own set of outlets.
+    
+    " It is is important to note that companies cannnot go bankrupt"
     
     */ 
     
@@ -495,6 +500,12 @@ namespace FoodCS
         }
     }
 
+    /*
+    
+    UI is obtuse. This makes it really difficult for the user to see what is actually happening in the simulation.
+    
+    */
+    
     class Simulation
     {
         private static Random rnd = new Random();
@@ -585,7 +596,7 @@ namespace FoodCS
                 Console.WriteLine(details + "\n");
             }
         }
-
+        // "adds households. can exceed the household limit. "
         private void ProcessAddHouseholdsEvent()
         {
             int NoOfNewHouseholds = rnd.Next(1, 5);
