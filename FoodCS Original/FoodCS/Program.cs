@@ -87,29 +87,34 @@ namespace FoodCS
             CreateHouseholds();
         }
 
-        //
+        //Returns the number of objects in the list Households. - M
         public int GetNumberOfHouseholds()
         {
             return households.Count;
         }
-
+        
+        //Returns the width of the settlement
         public int GetXSize()
         {
             return xSize;
         }
-
+        
+        //Returns the height of the settlement
         public int GetYSize()
         {
             return ySize;
         }
-        //refs used to remove the need for complex return values and to allow for the use of the same function for both x and y
+        
+        //refs used to remove the need for complex return values and to allow for the use of the same function for both x and y.
+        //refs also used for convenience as the method needs to set variables directly. - M
         public void GetRandomLocation(ref int x, ref int y)
         {
             //this code allows for overlapping households but it is not a problem for this simulation and sort of simulates the real world
             x = Convert.ToInt32(rnd.NextDouble() * xSize);
             y = Convert.ToInt32(rnd.NextDouble() * ySize);
         }
-
+        
+        //Calls AddHousehold() a number of times equal to the starting number of households. Used for initial generation of households. - M
         public void CreateHouseholds()
         {
             for (int count = 0; count < startNoOfHouseholds; count++)
@@ -118,9 +123,10 @@ namespace FoodCS
             }
         }
         //adds a household to the list of households
+        //Also calls GetRandomLocation the position of the household - M
         public void AddHousehold()
         {
-            int x = 0, y = 0;
+            int x = 0, y = 0; //Unnecessary? - M
             GetRandomLocation(ref x, ref y);
             Household temp = new Household(x, y);
             households.Add(temp);
