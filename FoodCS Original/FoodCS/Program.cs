@@ -23,37 +23,47 @@ namespace FoodCS
     class Household
     {
         /* The household class is used to store information on individual houses pretty basic very struct like in nature */
-        private static Random rnd = new Random();
+        private static Random rnd = new Random(); //rnd is static so that the same instance of rnd is used in every instance of household. - M
         protected double chanceEatOutPerDay;
         protected int xCoord, yCoord, ID;
-        protected static int nextID = 1;
-
+        protected static int nextID = 1; //nextID is static so that it is constant across all instances. Allows for a robust and efficient method to give each instance a unique ID. - M
+        
+        /* Note: The location of each household is stored within each household itself, rather than within another element such as a 2D array.
+                  As a result, it is possible for multiple households to exist in one location. - M */
+       
+        //Constructor
         public Household(int x, int y)
         {
             xCoord = x;
             yCoord = y;
-            chanceEatOutPerDay = rnd.NextDouble();
+            chanceEatOutPerDay = rnd.NextDouble(); //The chance that a family eats out each day is even. An improvement may be to weight the random numbers so that each household is less likely to eat out than to eat in. - M
+            
+            //Assigns a unique ID to each household. - M
             ID = nextID;
-            nextID++;
+            nextID++; 
         }
-
+        
+        //Returns a string which contains the coordinates of the house along with it's probability of eating out. Formatting could be more consistent by using PadRight(). - M
         public string GetDetails()
         {
             string details;
             details = ID.ToString() + "     Coordinates: (" + xCoord.ToString() + ", " + yCoord.ToString() + ")     Eat out probability: " + chanceEatOutPerDay.ToString();
             return details;
         }
-
+        
+        //Returns the chance that the given household eats out each day
         public double GetChanceEatOut()
         {
             return chanceEatOutPerDay;
         }
-
+        
+        //Returns the X Coordinate of the household
         public int GetX()
         {
             return xCoord;
         }
-
+        
+        //Returns the Y Coordinate of the household
         public int GetY()
         {
             return yCoord;
@@ -66,8 +76,9 @@ namespace FoodCS
         kind of struct like contains useful functions such as generate households */
         private static Random rnd = new Random();
         protected int startNoOfHouseholds, xSize, ySize;
-        protected List<Household> households = new List<Household>();
-
+        protected List<Household> households = new List<Household>(); //Households is stored as a list 
+        
+        //Constructor
         public Settlement()
         {
             xSize = 1000;
@@ -76,6 +87,7 @@ namespace FoodCS
             CreateHouseholds();
         }
 
+        //
         public int GetNumberOfHouseholds()
         {
             return households.Count;
