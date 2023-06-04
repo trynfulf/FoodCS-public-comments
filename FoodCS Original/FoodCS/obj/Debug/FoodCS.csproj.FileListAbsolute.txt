@@ -1,0 +1,20 @@
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\bin\Debug\FoodCS.exe.config
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\bin\Debug\FoodCS.exe
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\bin\Debug\FoodCS.pdb
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\obj\Debug\FoodCS.csprojResolveAssemblyReference.cache
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\obj\Debug\FoodCS.exe
+\\file\mark.atkinson$\visual studio 2013\Projects\FoodCS\FoodCS\obj\Debug\FoodCS.pdb
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS\FoodCS\bin\Debug\FoodCS.exe.config
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS\FoodCS\obj\Debug\FoodCS.exe
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS\FoodCS\obj\Debug\FoodCS.pdb
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS Original\FoodCS\bin\Debug\FoodCS.exe.config
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS Original\FoodCS\obj\Debug\FoodCS.exe
+Q:\Maths_Business_Computing Faculty\Computer Science\Mr Atkinson\A2 Computer Science Unit 1\Preliminary Material 2020\FoodCS Original\FoodCS\obj\Debug\FoodCS.pdb
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\bin\Debug\FoodCS.exe.config
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\bin\Debug\FoodCS.exe
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\bin\Debug\FoodCS.pdb
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\obj\Debug\FoodCS.csproj.AssemblyReference.cache
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\obj\Debug\FoodCS.csproj.SuggestedBindingRedirects.cache
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\obj\Debug\FoodCS.csproj.CoreCompileInputs.cache
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\obj\Debug\FoodCS.exe
+E:\Visual Studio\source\repos\FoodCS-public-comments-main\FoodCS Original\FoodCS\obj\Debug\FoodCS.pdb
