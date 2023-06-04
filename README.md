@@ -3,4 +3,4 @@ Here is a public collaboration space for the foodCS skeleton program. Please fee
 
 Please take this seriously.
 
-The program.cs file can be found at FoodCS-public-comments/FoodCS Original/FoodCS
+The program.cs file can be found at `FoodCS Original/FoodCS/Program.cs`
